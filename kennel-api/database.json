@@ -1,0 +1,147 @@
+{
+    "animals": [
+        {
+ "id": 1,
+  "name": "Peggy",
+  "breed": "Pug",
+    "customerId": 1,
+    "locationId": 2
+ },
+  {
+  "id": 2,
+  "name": "Snippet",
+  "breed": "Daschund",
+    "customerId": 2,
+    "locationId": 3
+ },
+  {
+  "id": 3,
+  "name": "Burrito",
+  "breed": "Bulldog",
+    "customerId": 3,
+    "locationId": 4
+ },
+  {
+  "id": 4,
+  "name": "Bark",
+  "breed": "Golden Retriever",
+    "customerId": 4,
+    "locationId": 5
+ },
+  {
+  "id": 5,
+  "name": "Gif",
+  "breed": "Labador",
+    "customerId": 5,
+    "locationId": 6
+ },
+ {
+ "id": 6,
+  "name": "Bixo do Coco",
+  "breed": "Chihuahua",
+    "customerId": 1,
+    "locationId": 2
+ }
+    ],
+    "customers": [
+        {
+            "id": 1,
+            "name": "Hannah Hall",
+            "address": "7002 Chestnut Ct"
+        },
+         {
+ "id": 1,
+  "name": "Customer 1",
+  "address": "123 W Fake St"
+ },
+  {
+  "id": 2,
+  "name": "Customer 2",
+  "address": "456 Also Fake Rd."
+ },
+  {
+  "id": 3,
+  "name": "Customer 3",
+  "address": "789 Fake Way"
+ },
+  {
+  "id": 4,
+  "name": "Customer 4",
+  "address": "1234 Fake Blvd"
+ },
+  {
+  "id": 5,
+  "name": "Customer 5",
+  "address": "5678 Fake Ct"
+ },
+ {
+ "id": 6,
+  "name": "Customer 6",
+  "address": "123 E Fake St"
+ }
+    ],
+    "employees": [
+        {
+ "id": 1,
+  "name": "Peggy",
+  "job": "Professional Dog Snuggles"
+ },
+  {
+  "id": 2,
+  "name": "Cat Lady",
+  "job": "Picks up cat poop"
+ },
+  {
+  "id": 3,
+  "name": "Mage",
+  "job": "Eats poop"
+ },
+  {
+  "id": 4,
+  "name": "Hobo Jack",
+  "job": "Doesn't actually work here, just hangs out here."
+ },
+  {
+  "id": 5,
+  "name": "Drifter Jeff",
+  "job": "Hobo Jack's friend"
+ },
+ {
+ "id": 6,
+  "name": "Charlie",
+  "job": "Horse without a liver."
+ }
+    ],
+    "locations": [
+        {
+            "id": 1,
+            "name": "Nashville North",
+            "address": "8422 E Johnson Pike"
+        },
+        {
+            "id": 2,
+            "name": "Nashville South",
+            "address": "209 W Emory Drive"
+        },
+                {
+            "id": 3,
+            "name": "Nashville East",
+            "address": "8422 N Johnson Pike"
+        },
+        {
+            "id": 4,
+            "name": "Nashville West",
+            "address": "209 S Emory Drive"
+        },
+                {
+            "id": 5,
+            "name": "Nashville North",
+            "address": "8422 N Johnson Pike"
+        },
+        {
+            "id": 6,
+            "name": "Nashville South",
+            "address": "209 S Emory Drive"
+        }
+    ]
+}

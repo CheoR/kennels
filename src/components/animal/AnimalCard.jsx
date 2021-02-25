@@ -1,4 +1,4 @@
-import Reach from "react"
+import React from "react"
 import "./Animal.css"
 
 export const AnimalCard = ( { name, breed }) => (
