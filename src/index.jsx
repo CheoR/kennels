@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 // import App from './App';
 // import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from "react-router-dom"
 import { Kennel } from "./components/Kennel"
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Kennel />
+    <Router>
+      {/*
+        Tells react will be placing Routes in Kellen component.
+      */}
+      <Kennel />
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );
