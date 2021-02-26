@@ -8,6 +8,13 @@ import React, { useState, createContext } from "react"
  When you createa a data provider component in React, you need to create a context.
  Nothing is stored in the context when it's defined.
  Initially it's just an empty warehouse ready to be filled.
+
+ The component that uses the context will use it in the following way:
+
+import React, { useContext, useEffect } from "react"
+import { AnimalContext } from "./AnimalProvider"
+ 
+const { animals, getAnimals } = useContext(AnimalContext)
 */
 export const AnimalContext = createContext()
 
@@ -18,6 +25,7 @@ export const AnimalContext = createContext()
  One of the properties will be children which contins child elements.
 */
 export const AnimalProvider = ( props ) => {
+
  /*
   useState - function to hold and set array of animals.
   createContext - function to 
@@ -29,10 +37,11 @@ export const AnimalProvider = ( props ) => {
   return fetch("http://localhost:8088/animals?_expand=location")
    .then(res => res.json())
    .then(setAnimals)
+   // .then(animalData => setAnimals(animalData))
  } // getAnimals
 
 
-const addAnimal = animalObj => {
+const addAnimal = ( animalObj ) => {
  return fetch("http://localhost:8088/animals", {
   method: "POST",
   headers: {
@@ -41,7 +50,7 @@ const addAnimal = animalObj => {
   body: JSON.stringify(animalObj)
  })
  .then(getAnimals)
-
+} // addAnimal
 
  /*
   You return this context provider.
@@ -49,14 +58,18 @@ const addAnimal = animalObj => {
   getAnimals - variable state of the animal variable
   addAnimal - function to add animal to api 
   getAnimals - function to get animals from api
+
+  Other components would be able to access the array of objects being
+  sored in the animals variable, and can invoke the getAnimal/addAnimal
+  functions.
  */
+  console.log(animals)
+
  return (
   <AnimalContext.Provider value={{
-   animals, getAnimals, setAnimals
+   animals, getAnimals, addAnimal
   }}>
    { props.children }
   </AnimalContext.Provider>
  ) // return
-} // addAnimal
-
 } // AnimalProvider
