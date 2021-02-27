@@ -23,6 +23,14 @@ export const AnimalContext = createContext()
  Component establishes what data is avaialble for use.
  Child components will ahve access to data. React will send object to each component.
  One of the properties will be children which contins child elements.
+
+ When imported, child component will look like:
+
+  <AnimalProvider>
+    <Route path="/animals">
+     <AnimalList />
+    </Route>
+   </AnimalProvider>
 */
 export const AnimalProvider = ( props ) => {
 
@@ -63,7 +71,6 @@ const addAnimal = ( animalObj ) => {
   sored in the animals variable, and can invoke the getAnimal/addAnimal
   functions.
  */
-  console.log(animals)
 
  return (
   <AnimalContext.Provider value={{
