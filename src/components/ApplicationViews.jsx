@@ -9,6 +9,8 @@ import { EmployeeList } from "./employee/EmployeeList"
 import { EmployeeProvider } from "./employee/EmployeeProvider"
 import { LocationList } from "./location/LocationList"
 import { LocationProvider } from "./location/LocationProvider"
+import { AnimalForm } from "./animal/AnimalForm"
+
 
 export const ApplicationViews = () => {
  return (
@@ -32,24 +34,16 @@ export const ApplicationViews = () => {
     It is crucial that you wrap components that need data with the provider component 
     that exposes that data in JSX. You can wrap a component in as many providers as needed.
    */}
-   
-   {/* <AnimalProvider>
-    <Route path="/animals">
-     <AnimalList />
-    </Route>   
-   </AnimalProvider> */}
+   {/* Allow acesss to multiple data providers */}
      <AnimalProvider><LocationProvider><CustomerProvider>
     <Route exact path="/animals">
      <AnimalList />
+    </Route>
+
+    <Route exact path="/animals/create">
+      <AnimalForm />
     </Route>   
    </CustomerProvider></LocationProvider></AnimalProvider>
-
-   {/* Allow acesss to multiple data providers */}
-   {/* <AnimalProvider><LocationProvider><CustomerProvider>
-    <Route exact path="/animals/create">
-     <AnimalForm />
-    </Route>   
-   </CustomerProvider></LocationProvider></AnimalProvider> */}
 
 
    {/* Render the animal list when http://localhost:3000/customers */}
