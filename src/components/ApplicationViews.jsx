@@ -33,11 +33,24 @@ export const ApplicationViews = () => {
     that exposes that data in JSX. You can wrap a component in as many providers as needed.
    */}
    
-   <AnimalProvider>
+   {/* <AnimalProvider>
     <Route path="/animals">
      <AnimalList />
-    </Route>
-   </AnimalProvider>
+    </Route>   
+   </AnimalProvider> */}
+     <AnimalProvider><LocationProvider><CustomerProvider>
+    <Route exact path="/animals">
+     <AnimalList />
+    </Route>   
+   </CustomerProvider></LocationProvider></AnimalProvider>
+
+   {/* Allow acesss to multiple data providers */}
+   {/* <AnimalProvider><LocationProvider><CustomerProvider>
+    <Route exact path="/animals/create">
+     <AnimalForm />
+    </Route>   
+   </CustomerProvider></LocationProvider></AnimalProvider> */}
+
 
    {/* Render the animal list when http://localhost:3000/customers */}
    <CustomerProvider>
