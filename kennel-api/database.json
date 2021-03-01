@@ -130,6 +130,12 @@
       "name": "Charlie",
       "job": "Horse without a liver.",
       "locationId": 3
+    },
+    {
+      "name": "Sunny",
+      "job": "Ray Of Happiness",
+      "locationId": 2,
+      "id": 7
     }
   ],
   "locations": [
