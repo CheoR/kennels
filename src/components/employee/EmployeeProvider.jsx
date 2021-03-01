@@ -19,7 +19,8 @@ export const EmployeeProvider = ( props ) => {
     "Content-Type": "application/json"
    },
    body: JSON.stringify(employeeObj)
-  }) // fetch
+  })
+  .then(getEmployees) // fetch
  } // addEmployee
 
  return (
