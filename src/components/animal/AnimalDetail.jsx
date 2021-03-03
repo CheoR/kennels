@@ -6,6 +6,9 @@ import { AnimalContext } from "./AnimalProvider"
 export const AnimalDetail = () => {
 
  const { getAnimalById } = useContext(AnimalContext)
+ /*
+  use {} for inital state since getAnimalById returns data as an object {} 
+ */
  const [animal, setAnimal] = useState({})
 
  /*
@@ -17,7 +20,7 @@ export const AnimalDetail = () => {
  const history = useHistory()
 
  useEffect(() => {
-  console.log(`useEffect: ${ animalId }`)
+  console.log(`useEffect - animal: ${ animalId }`)
   getAnimalById(animalId)
    .then(res => setAnimal(res))
  }, []) // useEffect
