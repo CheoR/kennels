@@ -7,6 +7,7 @@ import { CustomerProvider } from "./customer/CustomerProvider"
 
 import { AnimalList } from "./animal/AnimalList"
 import { AnimalForm } from "./animal/AnimalForm"
+import { AnimalDetail } from "./animal/AnimalDetail"
 import { AnimalProvider } from "./animal/AnimalProvider"
 
 import { EmployeeList } from "./employee/EmployeeList"
@@ -54,6 +55,17 @@ export const ApplicationViews = () => {
 
     <Route exact path="/animals/create">
       <AnimalForm />
+    </Route>
+
+
+    {/*
+      :animalId(\d+) - serves as a variable to hold the actual value that will be in the URL.
+      For example, http://localhost:3000/animals/detail/3, the value of 3 will be stored in animalId. 
+      The variable can then be accessed and used inside AnimalDetail
+    */}
+
+    <Route exact path="/animals/detail/:animalId(\d+)">
+      <AnimalDetail />
     </Route>   
    </CustomerProvider></LocationProvider></AnimalProvider>
 

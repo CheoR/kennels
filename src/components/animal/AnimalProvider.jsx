@@ -49,13 +49,6 @@ export const AnimalProvider = ( props ) => {
  } // getAnimals
 
 
- const getAnimalById = ( id ) => {
-   return fetch(`http://localhost:8088/animals/${id}?_expand=location&_expand=customer`)
-    .then(res = res.json())
-
- } // getAnimalById
-
-
 const addAnimal = ( animalObj ) => {
  return fetch("http://localhost:8088/animals", {
   method: "POST",
@@ -66,6 +59,14 @@ const addAnimal = ( animalObj ) => {
  })
  .then(getAnimals)
 } // addAnimal
+
+
+ const getAnimalById = ( id ) => {
+   return fetch(`http://localhost:8088/animals/${id}?_expand=location&_expand=customer`)
+    .then(res => res.json())
+
+ } // getAnimalById
+
 
  /*
   You return this context provider.
