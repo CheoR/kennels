@@ -60,6 +60,14 @@ const addAnimal = ( animalObj ) => {
  .then(getAnimals)
 } // addAnimal
 
+
+ const getAnimalById = ( id ) => {
+   return fetch(`http://localhost:8088/animals/${id}?_expand=location&_expand=customer`)
+    .then(res => res.json())
+
+ } // getAnimalById
+
+
  /*
   You return this context provider.
   The AnimalProvider has the following accessible keys:
@@ -74,7 +82,7 @@ const addAnimal = ( animalObj ) => {
 
  return (
   <AnimalContext.Provider value={{
-   animals, getAnimals, addAnimal
+   animals, getAnimals, addAnimal, getAnimalById
   }}>
    { props.children }
   </AnimalContext.Provider>

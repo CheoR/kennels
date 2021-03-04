@@ -16,6 +16,7 @@ export const LocationList = () => {
  const history = useHistory()
 
  useEffect(() => {
+   console.log(`useEffect - list location`)
   getLocations()
  }, []) // useEffect
 
