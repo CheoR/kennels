@@ -17,7 +17,6 @@ export const EmployeeDetail = () => {
    .then(res => setEmployee(res))
  }, []) // useEffect
 
- debugger
  return (
   <section className="detail">
      <div className="employee__job">{ employee.job }</div>

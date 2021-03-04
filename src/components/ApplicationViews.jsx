@@ -1,6 +1,6 @@
 import React from "react"
 import { Route } from "react-router-dom"
-import { Home } from "./Home"
+// import { Home } from "./Home"
 
 import { CustomerList } from "./customer/CustomerList"
 import { CustomerProvider } from "./customer/CustomerProvider"
@@ -18,25 +18,30 @@ import { EmployeeProvider } from "./employee/EmployeeProvider"
 import { LocationList } from "./location/LocationList"
 import { LocationProvider } from "./location/LocationProvider"
 import { LocationForm } from "./location/LocationForm"
+import { LocationDetail } from "./location/LocationDetail"
 
 
 export const ApplicationViews = () => {
  return (
   <>
-   {/* Render the location list when http://localhost:3000/ */}
-   <Route exact path="/">
-    <Home />
-   </Route>
-
 
    {/* Render the animal list when http://localhost:3000/locations */}
    <LocationProvider>
-    <Route exact path="/locations">
+    {/* <Route exact path="/locations"> */}
+
+   {/* Render the location list when http://localhost:3000/ */}
+    {/* </Route> */}
+   <Route exact path="/">
+    {/* <Home /> */}
      <LocationList />
-    </Route>
+   </Route>
 
     <Route exact path="/locations/create">
       <LocationForm />
+    </Route>
+
+    <Route exact path="/locations/detail/:locationId(\d+)">
+      <LocationDetail />
     </Route>
    </LocationProvider>
 
