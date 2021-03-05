@@ -5,7 +5,7 @@ import { AnimalContext } from "./AnimalProvider"
 
 export const AnimalDetail = () => {
 
- const { getAnimalById } = useContext(AnimalContext)
+ const { getAnimalById, releaseAnimalById } = useContext(AnimalContext)
  /*
   use {} for inital state since getAnimalById returns data as an object {} 
  */
@@ -25,6 +25,15 @@ export const AnimalDetail = () => {
    .then(res => setAnimal(res))
  }, []) // useEffect
 
+
+ const handleRelease = () => {
+   /*
+    Review how method knows animal id.
+   */
+   releaseAnimalById(animal.id)
+    .then(() => history.push("/animals"))
+ } // handleRelease
+
  /*
   Immediate properties of an empty object will not break if you try to reference that property but it doesn't actually exist,
    however nested properties of an empty object will. Use the Optional chaining (?.) operator to prevent nested values from
@@ -40,6 +49,8 @@ export const AnimalDetail = () => {
     <div className="animal__location">Location: using ?.foo { animal.location?.foo }</div>
     <div className="animal__owner">Customer: { animal.customer?.name }</div>
     <div className="animal__owner">Customer: using ?.foo { animal.customer?.foo }</div>
+    <button onClick={handleRelease}>Release Animal</button>
+
    </section>
  ) // return
 } // AnimalDetail
