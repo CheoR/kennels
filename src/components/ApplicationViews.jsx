@@ -63,6 +63,10 @@ export const ApplicationViews = () => {
       <AnimalForm />
     </Route>
 
+    <Route path="/animals/edit/:animalId(\d+)">
+      <AnimalForm />
+    </Route>
+
 
     {/*
       :animalId(\d+) - serves as a variable to hold the actual value that will be in the URL.
@@ -72,7 +76,7 @@ export const ApplicationViews = () => {
 
     <Route exact path="/animals/detail/:animalId(\d+)">
       <AnimalDetail />
-    </Route>   
+    </Route>
    </CustomerProvider></LocationProvider></AnimalProvider>
 
 

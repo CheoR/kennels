@@ -76,6 +76,22 @@ const addAnimal = ( animalObj ) => {
  } // releaseAnimalById
 
 
+  const updateAnimal = ( animal ) => {
+    /*
+      The main difference between the PUT and PATCH method is that the PUT method uses the request 
+      URI to supply a modified version of the requested resource which replaces the original version 
+      of the resource, whereas the PATCH method supplies a set of instructions to modify the resource.
+    */
+    return fetch(`http://localhost:8088/animals/${animal.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(animal)
+    })
+    .then(getAnimals)
+  } // updateAnimal
+
  /*
   You return this context provider.
   The AnimalProvider has the following accessible keys:
@@ -90,7 +106,7 @@ const addAnimal = ( animalObj ) => {
 
  return (
   <AnimalContext.Provider value={{
-   animals, getAnimals, addAnimal, getAnimalById, releaseAnimalById
+   animals, getAnimals, addAnimal, getAnimalById, releaseAnimalById, updateAnimal
   }}>
    { props.children }
   </AnimalContext.Provider>
